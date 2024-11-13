@@ -2,6 +2,7 @@ package practicepack;
 
 import java.util.Scanner;
 
+// 메인 클래스
 public class BoardServiceTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -35,9 +36,9 @@ public class BoardServiceTest {
                         break;
                     } // if ed
                 } // for ed
-                if (!save) {
+                if (!save) { // 게시물 등록 실패 시
                     System.out.println("게시물 등록 실패 : 저장 공간이 부족합니다.");
-                } else {
+                } else { // 게시물 등록 성공 시
                     System.out.println("게시물 등록 성공");
                 } // if ed
             } // f1=1 if ed
