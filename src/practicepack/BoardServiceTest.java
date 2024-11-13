@@ -37,8 +37,20 @@ public class BoardServiceTest {
                 } // for ed
                 if (!save) {
                     System.out.println("게시물 등록 실패 : 저장 공간이 부족합니다.");
+                } else {
+                    System.out.println("게시물 등록 성공");
                 } // if ed
             } // f1=1 if ed
+
+            // 게시물 출력기능 함수
+            if (f1 == 2) {
+                for (int i = 0; i < post.length; i++) {
+                    if (post[i] != null) {
+                        System.out.printf("내용 : %s , 작성자 : %s , 비밀번호 : %d\n",post[i].content,post[i].writer,post[i].password);
+                    } // if ed
+                } // for ed
+            } // f1=2 if ed
         } // while ed
+
     } // main ed
 } // class ed
