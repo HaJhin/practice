@@ -27,10 +27,8 @@ public class BoardServiceTest1 {
                 int pwd = scan.nextInt();
 
                 // [2] 입력받은 데이터로 게시물 객체 생성
-                NewBoard board = new NewBoard();
-                board.setContent(content);
-                board.setWriter(writer);
-                board.setPwd(pwd);
+                NewBoard board = new NewBoard(content,writer,pwd);
+
 
                 // [3] 컬렉션프레임워크인 리스트객체에 게시물을 저장
                 boardList.add(board);
@@ -38,10 +36,8 @@ public class BoardServiceTest1 {
             } else if (choose == 2) {
                 // 배열 내 존재하는 게시물을 모두 출력하기
                 for (int i = 0; i < boardList.size(); i++) {
-                    if (boardList != null) {
                         System.out.printf("내용:%s 작성자:%s 비밀번호:%d\n",
                                 boardList.get(i).getContent(), boardList.get(i).getWriter(), boardList.get(i).getPwd());
-                    } // if ed
                 } // for ed
             } // if ed
         } // while ed
