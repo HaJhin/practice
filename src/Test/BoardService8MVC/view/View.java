@@ -13,18 +13,32 @@ public class View {
     } // 싱글톤 ed
 
     Scanner scanner = new Scanner(System.in);
+    boolean log = false;
 
-    public void mainPage() {
-        while (true) {
-            System.out.print("1.회원가입 2.로그인 : ");
-            int choose = scanner.nextInt();
+    public void mainPage() { // 메인 페이지 실행
+        if (log == false) { // 로그아웃 상태일 시
+            while (true) {
+                System.out.print("1.회원가입 2.로그인 : ");
+                int choose = scanner.nextInt();
 
-            if (choose == 1) {
-                register();
-            } else if (choose == 2) {
-                logIn();
-            } // if else if ed
-        } // while ed
+                if (choose == 1) {
+                    register();
+                } else if (choose == 2) {
+                    logIn();
+                } // if else if ed
+            } // while ed
+        } else if (log == true) { // 로그인 상태일 시
+            while (true) {
+                System.out.print("1.게시물 작성 2.게시물 출력 : ");
+                int choose = scanner.nextInt();
+
+                if (choose == 1) {
+                    boardWrite();
+                } else if (choose == 2) {
+                    boardPrint();
+                } // if else if ed
+            } // while ed
+        }
     } // mainPage ed
 
     // 회원가입 메서드
@@ -39,7 +53,7 @@ public class View {
             System.out.println("회원가입 성공");
         } else {
             System.out.println("회원가입 실패");
-        }
+        } // if ed
     } // register ed
 
 
@@ -55,6 +69,14 @@ public class View {
             System.out.println("로그인 성공");
         } else {
             System.out.println("로그인 실패");
-        }
-    }
-}
+        } // if
+    } // login ed
+
+    void boardWrite () {
+
+    } // boardWrite ed
+
+    void boardPrint () {
+
+    } // boardPrint ed
+} // class ed

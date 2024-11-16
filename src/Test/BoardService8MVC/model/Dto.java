@@ -4,9 +4,19 @@ public class Dto {
     private String id;
     private int pwd;
 
+    private String content;
+    private String writer;
+
+    // 로그인 정보 생성자
     public Dto(String id, int pwd) {
         this.id = id;
         this.pwd = pwd;
+    }
+
+    // 게시물 작성 생성자
+    public Dto(String content,String writer) {
+        this.content = content;
+        this.writer = writer;
     }
 
     public String getId() {
