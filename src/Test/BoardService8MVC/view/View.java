@@ -19,8 +19,8 @@ public class View {
 
     public void mainPage() { // 메인 페이지 실행
         while (true) {
-             // 로그아웃 상태일 시
-                while (true) {
+                // 로그아웃 상태일 시
+                    while (true) {
                     System.out.print("1.회원가입 2.로그인 : ");
                     int choose = scanner.nextInt();
 
