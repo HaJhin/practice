@@ -35,11 +35,29 @@ public class Dto {
         this.pwd = pwd;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
+
     @Override
     public String toString() {
         return "Dto{" +
                 "id='" + id + '\'' +
                 ", pwd=" + pwd +
+                ", content='" + content + '\'' +
+                ", writer='" + writer + '\'' +
                 '}';
     }
 }

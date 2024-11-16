@@ -11,7 +11,7 @@ public class Dao {
     }
 
     ArrayList<Dto> db = new ArrayList<>();
-
+    ArrayList<Dto> db2 = new ArrayList<>();
     // 회원가입 함수
     public boolean register(Dto dto){
         db.add(dto);
@@ -30,5 +30,13 @@ public class Dao {
         return re;
     } // logIn ed
 
-    } // class ed
+    public boolean boardWrite(Dto dto) {
+        db2.add(dto);
+        return true;
+    }
+
+    public ArrayList<Dto> boardPrint() {
+            return db2;
+    } // boardprint ed
+} // class ed
 

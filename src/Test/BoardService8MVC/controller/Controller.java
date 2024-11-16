@@ -25,7 +25,15 @@ public class Controller {
         return result;
     }
 
+    //게시물 작성
+    public boolean boardWrite(String content,String writer) {
+    Dto dto = new Dto(content,writer);
+    return Dao.getInstance().boardWrite(dto);
+    } // boardWrite
 
-
-
+    //게시물 출력
+    public ArrayList<Dto> boardPrint() {
+        ArrayList<Dto> result = Dao.getInstance().boardPrint();
+        return result;
+    }
 }
