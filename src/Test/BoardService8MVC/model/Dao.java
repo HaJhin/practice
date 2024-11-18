@@ -9,16 +9,18 @@ public class Dao {
     public static Dao getInstance() {
         return dao;
     }
-
+    // 회원가입 정보 객체
     ArrayList<Dto> db = new ArrayList<>();
+    // 게시물 정보 객체
     ArrayList<Dto> db2 = new ArrayList<>();
-    // 회원가입 함수
+
+    // 회원가입 메서드
     public boolean register(Dto dto){
         db.add(dto);
         return true;
     }
 
-    // 로그인 성공여부 함수
+    // 로그인 성공여부 메서드
     public boolean login(String id,int pwd) {
         boolean re = false;
         for (int i = 0; i < db.size(); i++) {
@@ -30,11 +32,13 @@ public class Dao {
         return re;
     } // logIn ed
 
+    // 게시물 작성 메서드
     public boolean boardWrite(Dto dto) {
         db2.add(dto);
         return true;
     }
 
+    // 게시물 출력 메서드
     public ArrayList<Dto> boardPrint() {
             return db2;
     } // boardprint ed

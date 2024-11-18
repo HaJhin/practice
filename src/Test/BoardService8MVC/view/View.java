@@ -28,7 +28,8 @@ public class View {
                         register();
                     } else if (choose == 2) {
                         logIn();
-                    } else if (log == true) {
+                    }
+                    if (log == true) {
                         break;
                     } // if-else if ed
                 } // while ed
@@ -80,6 +81,7 @@ public class View {
         } // if
     } // login ed
 
+    // 게시물 작성 메서드
     void boardWrite () {
         scanner.nextLine();
         System.out.print("내용 : ");
@@ -98,10 +100,11 @@ public class View {
         } //if ed
     } // boardWrite ed
 
+    // 게시물 출력 메서드
     void boardPrint () {
         ArrayList<Dto> result = Controller.getInstance().boardPrint();
 
-        for (int i = 0; 0 < result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             System.out.printf("게시물 내용 : %s 게시물 작성자 : %s\n",result.get(i).getContent(),result.get(i).getWriter());
         } // for ed
 
