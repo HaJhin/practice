@@ -24,17 +24,18 @@ public class View {
                     System.out.print("1.회원가입 2.로그인 : ");
                     int choose = scanner.nextInt();
 
-                    if (choose == 1) {
+                    if (choose == 1) { // 회원가입
                         register();
-                    } else if (choose == 2) {
+                    } else if (choose == 2) { // 로그인
                         logIn();
                     }
                     if (log == true) {
                         break;
                     } // if-else if ed
                 } // while ed
-                if (log == true) { // 로그인 상태일 시
-                while (true) {
+
+            if (log == true) { // 로그인 상태일 시
+                while (true) { // 게시물 작성/출력 기능
                     System.out.print("1.게시물 작성 2.게시물 출력 : ");
                     int choose = scanner.nextInt();
 
