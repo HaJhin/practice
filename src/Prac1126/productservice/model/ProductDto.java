@@ -1,17 +1,17 @@
 package Prac1126.productservice.model;
 
-public class Dto {
+public class ProductDto {
     private int num; // 제품번호
     private String name; // 제품명
     private int price; // 제품가격
 
-    public Dto(int num, String name, int price) {
+    public ProductDto(int num, String name, int price) {
         this.num = num;
         this.name = name;
         this.price = price;
     }
 
-    public Dto(String name, int price) {
+    public ProductDto(String name, int price) {
         this.name = name;
         this.price = price;
     }

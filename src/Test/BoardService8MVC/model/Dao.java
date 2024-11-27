@@ -1,5 +1,7 @@
 package Test.BoardService8MVC.model;
 
+import Prac1126.productservice.model.ProductDto;
+
 import java.util.ArrayList;
 
 public class Dao {
@@ -33,7 +35,7 @@ public class Dao {
     } // logIn ed
 
     // 게시물 작성 메서드
-    public boolean boardWrite(Dto dto) {
+    public boolean boardWrite(ProductDto dto) {
         db2.add(dto);
         return true;
     }
