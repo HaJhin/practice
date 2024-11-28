@@ -33,8 +33,7 @@ public class ProductView {
 
     void boardWrite() {
         System.out.print("제품명 입력 : ");
-        String name = scan.nextLine();
-        scan.nextLine();
+        String name = scan.next();
         System.out.print("제품가격 입력 : ");
         int price = scan.nextInt();
         boolean result = ProductController.getInstance().boardWrite(name,price);
@@ -56,14 +55,14 @@ public class ProductView {
 
     // 게시물 제거 함수
     void boardDelete () {
-        System.out.println("제거할 게시물을 선택해주세요.");
+        System.out.println("제거할 제품을 선택해주세요.");
         boardPrint();
         int D = scan.nextInt();
         boolean result = ProductController.getInstance().boardDelete(D);
         if (result) {
-            System.out.println("게시물 삭제 성공.");
+            System.out.println("제품 삭제 성공.");
         } else {
-            System.out.println("게시물 삭제 실패");
+            System.out.println("제품 삭제 실패");
         } // boardDelete ed
     }
 
@@ -72,10 +71,9 @@ public class ProductView {
         System.out.println("수정할 제품을 선택해주세요.");
         boardPrint();
         int U = scan.nextInt();
-        System.out.println("수정할 제품명 : ");
-        String S = scan.nextLine();
-        scan.nextLine();
-        System.out.println("수정할 제품가격 : ");
+        System.out.print("수정할 제품명 : ");
+        String S = scan.next();
+        System.out.print("수정할 제품가격 : ");
         int P = scan.nextInt();
         ProductDto dto = new ProductDto(U,S,P);
         boolean result = ProductController.getInstance().boardUpdate(dto);

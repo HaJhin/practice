@@ -10,7 +10,7 @@ public class ProductDao {
     private ProductDao() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb1125","root","6703");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/product","root","6703");
             System.out.println("DB 연동 성공");
         } catch (ClassNotFoundException e) {
             e.getMessage();
@@ -27,7 +27,7 @@ public class ProductDao {
     // 제품 추가
     public boolean boardWrite(ProductDto productDto) {
         try {
-            String sql = "insert into board(pname,price)values(?,?)";
+            String sql = "insert into board(pname,price)values(?,?);";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1,productDto.getName());
             ps.setInt(2,productDto.getPrice());
@@ -48,7 +48,7 @@ public class ProductDao {
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                int num = rs.getInt("num");
+                int num = rs.getInt("numpk");
                 String name = rs.getString("pname");
                 int price = rs.getInt("price");
                 ProductDto dto = new ProductDto(num,name,price);
@@ -63,7 +63,7 @@ public class ProductDao {
     // 제품 삭제
     public boolean boardDelete(int D) {
         try {
-            String sql = "delete from board where num = ?";
+            String sql = "delete from board where numpk = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,D);
             int result = ps.executeUpdate();
@@ -79,11 +79,17 @@ public class ProductDao {
     // 제품 수정
     public boolean boardUpdate(ProductDto dto) {
         try {
-            String sql = "update board set pname = ? where num = ?;";
+            String sql = "update board set pname = ? where numpk = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1,dto.getName());
             ps.setInt(2,dto.getNum());
             ps.executeUpdate();
+            String sql2 = "update board set price = ? where numpk = ?;";
+            PreparedStatement ps2 = connection.prepareStatement(sql2);
+            ps2.setInt(1,dto.getPrice());
+            ps2.setInt(2,dto.getNum());
+            ps2.executeUpdate();
+            return true;
         } catch (SQLException e) {
             e.getMessage();
         }

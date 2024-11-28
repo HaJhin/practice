@@ -2,7 +2,7 @@ package Prac1126.productservice.controller;
 
 import Prac1126.productservice.model.ProductDao;
 import Prac1126.productservice.model.ProductDto;
-import Test.BoardService8MVC.model.Dao;
+
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class ProductController {
 
     public boolean boardWrite(String name,int price) {
         ProductDto productDto = new ProductDto(name,price);
-        boolean result = Dao.getInstance().boardWrite(productDto);
+        boolean result = ProductDao.getInstance().boardWrite(productDto);
         return result;
     } // boardWrite ed
 

@@ -1,0 +1,9 @@
+create database product;
+use product;
+drop table if exists board;
+create table board(
+numpk int unsigned auto_increment not null primary key,
+pname longtext,
+price int not null
+);
+select * from board;

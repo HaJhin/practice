@@ -7,3 +7,4 @@ public class AppStart {
         BoardView.getInstance().mainPage();
     }
 }
+
