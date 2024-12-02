@@ -7,3 +7,5 @@ public class AppStart {
         ProductView.getInstance().mainPage();
     }
 }
+
+// test
